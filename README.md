@@ -18,3 +18,5 @@ Le projet permet de :
 - Messages de confirmation pour les opérations CRUD
 - Relations Eloquent entre Étudiants et Villes
 - Design responsive adapté aux mobiles et tablettes
+
+## Auteur : Meriem El kouarir
