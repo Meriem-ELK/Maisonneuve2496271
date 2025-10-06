@@ -42,7 +42,7 @@ class EtudiantController extends Controller
             'adresse' => 'required|string|max:255',
             'telephone' => 'required|string|max:255',
             'email' => 'required|email|unique:etudiants,email',
-            'date_naissance' => "required|date|before_or_equal:$dateLimite", // Vérification des 16 ans
+            'date_naissance' => "required|date|before_or_equal:$dateLimite",
             'ville_id' => 'required|exists:villes,id'
         ]);
 

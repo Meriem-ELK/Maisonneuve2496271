@@ -12,9 +12,8 @@
                 </h3>
             </div>
 
-            <!-- Corps des informations -->
+            <!-- Grille d'informations -->
             <div class="student-details-body">
-                <!-- Grille d'informations -->
                 <div class="info-grid">
                    
                     <!-- Date de naissance -->
@@ -38,7 +37,7 @@
                     <div class="info-item">
                         <div class="info-label">Numéro de téléphone</div>
                         <p class="info-value">
-                            <a href="tel:{{ $etudiant->telephone }}">{{ $etudiant->telephone }}</a>
+                            {{ $etudiant->telephone }}
                         </p>
                     </div>
 
@@ -51,7 +50,6 @@
                         </p>
                     </div>
 
-                   
                 </div>
 
                 <!-- Adresse -->
@@ -77,7 +75,7 @@
                     <button type="submit" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash-fill me-1"></i>Supprimer
                     </button>
-                    
+
                 </div>
             </div>
         </div>
