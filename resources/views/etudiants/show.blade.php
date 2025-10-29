@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Détails de l\'Étudiant')
+@section('title', trans('lang.page__name_student_details'))
 @section('content')
 
 <div class="row justify-content-center card-content">
@@ -18,7 +18,7 @@
                    
                     <!-- Date de naissance -->
                     <div class="info-item">
-                        <div class="info-label">Date de naissance</div>
+                        <div class="info-label">@lang('lang.birth_date')</div>
                         <p class="info-value">
                             {{ $etudiant->date_naissance->format('d/m/Y') }}
                             <span class="age-badge">{{ $etudiant->date_naissance->age }} ans</span>
@@ -26,8 +26,8 @@
                     </div>
 
                     <!-- Email -->
-                    <div class="info-item">
-                        <div class="info-label">Adresse email</div>
+                    <div class="info-item"> 
+                        <div class="info-label">@lang('lang.email')</div>
                         <p class="info-value">
                             <a href="mailto:{{ $etudiant->email }}">{{ $etudiant->email }}</a>
                         </p>
@@ -35,15 +35,15 @@
 
                     <!-- Téléphone -->
                     <div class="info-item">
-                        <div class="info-label">Numéro de téléphone</div>
+                        <div class="info-label">@lang('lang.phone')</div>
                         <p class="info-value">
                             {{ $etudiant->telephone }}
                         </p>
                     </div>
 
                     <!-- Ville -->
-                    <div class="info-item">
-                        <div class="info-label">Ville de résidence</div>
+                    <div class="info-item"> 
+                        <div class="info-label">@lang('lang.city')</div>
                         <p class="info-value location-info">
                             <i class="bi bi-geo-alt-fill"></i>
                             {{ $etudiant->ville->nom }}
@@ -54,7 +54,7 @@
 
                 <!-- Adresse -->
                 <div class="address-full">
-                    <div class="info-label">Adresse complète</div>
+                    <div class="info-label">@lang('lang.address')</div>
                     <p class="info-value">{{ $etudiant->adresse }}</p>
                 </div>
             </div>
@@ -63,17 +63,17 @@
             <div class="btn-actions">
                 <div class="action-group">
                     <a href="{{ route('etudiant.index') }}" class="btn btn-outline-secondary">
-                        <i class="bi bi-arrow-left me-1"></i>Retour à la liste
+                        <i class="bi bi-arrow-left me-1"></i>@lang('lang.button_back')
                     </a>
                 </div>
                 
                 <div class="action-group">
                     <a href="{{ route('etudiant.edit', $etudiant) }}" class="btn btn-sm btn-outline-warning">
-                        <i class="bi bi-pencil-fill me-1"></i>Modifier
+                        <i class="bi bi-pencil-fill me-1"></i>@lang('lang.button_edit')
                     </a>
                     
                     <button type="submit" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                            <i class="bi bi-trash-fill me-1"></i>Supprimer
+                            <i class="bi bi-trash-fill me-1"></i>@lang('lang.button_delete')
                     </button>
 
                 </div>

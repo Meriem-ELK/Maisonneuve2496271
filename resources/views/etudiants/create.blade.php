@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Nouvel Étudiant')
+@section('title', trans('lang.page__name_new_student'))
 @section('content')
 
 <div class="row justify-content-center card-content">
@@ -8,8 +8,7 @@
             <!-- Header  -->
             <div class="card-header">
                 <h3 class="card-title mb-0">
-                    <i class="bi bi-person-plus-fill me-2"></i>Nouvel Étudiant
-                </h3>
+                    <i class="bi bi-person-plus-fill me-2"></i> {{ __('lang.new_student') }}
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ route('etudiant.store') }}">
@@ -17,7 +16,7 @@
                     
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="nom" class="form-label">Nom complet *</label>
+                            <label for="nom" class="form-label">{{ __('lang.name_student') }} *</label>
                             <input type="text" class="form-control"  id="nom" name="nom" value="{{ old('nom') }}">
                             @if($errors->has('nom'))
                                 <div class="text-danger mt-2">
@@ -27,7 +26,7 @@
                         </div>
                         
                         <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email *</label>
+                            <label for="email" class="form-label">{{ __('lang.email') }} *</label>
                             <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
 
                             @if($errors->has('email'))
@@ -40,7 +39,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="telephone" class="form-label">Téléphone *</label>
+                            <label for="telephone" class="form-label">{{ __('lang.phone') }} *</label>
                             <input type="text" class="form-control" 
                                    id="telephone" name="telephone" value="{{ old('telephone') }}">
                             
@@ -52,7 +51,7 @@
                         </div>
                         
                         <div class="col-md-6 mb-3">
-                            <label for="date_naissance" class="form-label">Date de naissance *</label>
+                            <label for="date_naissance" class="form-label">{{ __('lang.birth_date') }} *</label>
                             <input type="date" class="form-control" 
                                    id="date_naissance" name="date_naissance" value="{{ old('date_naissance') }}">
                            
@@ -65,7 +64,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="adresse" class="form-label">Adresse *</label>
+                        <label for="adresse" class="form-label">{{ __('lang.address') }} *</label>
                         <textarea class="form-control" 
                                   id="adresse" name="adresse" rows="3" >{{ old('adresse') }}</textarea>
 
@@ -77,10 +76,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="ville_id" class="form-label">Ville *</label>
+                        <label for="ville_id" class="form-label">{{ __('lang.city') }} *</label>
                         <select class="form-select" 
                                 id="ville_id" name="ville_id">
-                            <option value="">Sélectionner une ville</option>
+                            <option value="">{{ __('lang.select_city') }}</option>
                             @foreach($villes as $ville)
                                 <option value="{{ $ville->id }}" {{ old('ville_id') == $ville->id ? 'selected' : '' }}>
                                     {{ $ville->nom }}
@@ -96,10 +95,10 @@
 
                     <div class="d-flex justify-content-between">
                         <a href="{{ route('etudiant.index') }}" class="btn btn-outline-secondary">
-                            <i class="bi bi-arrow-left me-1"></i>Retour
+                            <i class="bi bi-arrow-left me-1"></i>{{ __('lang.button_back') }}
                         </a>
                         <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-save me-1"></i>Enregistrer
+                            <i class="bi bi-save me-1"></i>{{ __('lang.button_save') }}
                         </button>
                     </div>
                 </form>

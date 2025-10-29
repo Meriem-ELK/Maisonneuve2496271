@@ -15,7 +15,8 @@ class Etudiant extends Model
         'telephone',
         'email',
         'date_naissance',
-        'ville_id'
+        'ville_id',
+        'user_id'
     ];
 
     // Définition des types de certains champs
@@ -27,5 +28,15 @@ class Etudiant extends Model
     public function ville()
     {
         return $this->belongsTo(Ville::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function articles(){
+            return $this->hasMany(Article::class);
     }
 }

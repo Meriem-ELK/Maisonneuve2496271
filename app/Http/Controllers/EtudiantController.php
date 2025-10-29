@@ -48,7 +48,7 @@ class EtudiantController extends Controller
 
         Etudiant::create($validated);
 
-        return redirect()->route('etudiant.index')->with('success', 'Étudiant créé avec succès');
+        return redirect()->route('etudiant.index')->with('success', trans('lang.message_success_create_student'));
     }
 
     /**
@@ -85,7 +85,7 @@ class EtudiantController extends Controller
 
         $etudiant->update($validated);
 
-        return redirect()->route('etudiant.show', $etudiant)->with('success', 'Étudiant mis à jour avec succès');
+        return redirect()->route('etudiant.show', $etudiant)->with('success', trans('lang.message_success_updated_student'));
     }
 
     /**
@@ -94,6 +94,6 @@ class EtudiantController extends Controller
     public function destroy(Etudiant $etudiant)
     {
         $etudiant->delete();
-        return redirect()->route('etudiant.index')->with('success', 'Étudiant supprimé avec succès');
+        return redirect()->route('etudiant.index')->with('success', trans('lang.message_success_deleted_student'));
     }
 }

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->date('date_naissance');
             $table->foreignId('ville_id')->constrained('villes');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
     public function down(): void

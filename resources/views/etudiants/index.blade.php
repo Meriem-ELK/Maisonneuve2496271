@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', 'Liste des Étudiants')
+@section('title', trans('lang.page__name_list_student'))
 @section('content')
 
 <div class="d-flex justify-content-between align-items-center mb-4 card_header">
-    <h2><i class="bi bi-people-fill me-2"></i>Liste des étudiants</h2>
+    <h2><i class="bi bi-people-fill me-2"></i>@lang('lang.student_list')</h2>
     <a href="{{ route('etudiant.create') }}" class="btn btn-primary">
-        <i class="bi bi-person-plus-fill me-1"></i>Nouvel étudiant
+        <i class="bi bi-person-plus-fill me-1"></i>@lang('lang.new_student')
     </a>
 </div>
 
@@ -38,10 +38,10 @@
                 <div class="card-footer bg-white">
                     <div class="d-flex justify-content-end gap-2">
                         <a href="{{ route('etudiant.show', $etudiant->id) }}" class="btn btn-sm btn-outline-primary">
-                            <i class="bi bi-eye-fill me-1"></i>Voir
+                            <i class="bi bi-eye-fill me-1"></i>@lang('lang.button_view')
                         </a>
                         <a href="{{ route('etudiant.edit', $etudiant->id) }}" class="btn btn-sm btn-outline-warning">
-                            <i class="bi bi-pencil-fill me-1"></i>Modifier
+                            <i class="bi bi-pencil-fill me-1"></i>@lang('lang.button_edit')
                         </a>
                     </div>
                 </div>
