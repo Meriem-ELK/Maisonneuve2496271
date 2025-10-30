@@ -26,9 +26,7 @@
                         
                         <div class="mb-3">
                             <label for="titre_fr" class="form-label">{{ __('lang.titre_fr') }} *</label>
-                            <input type="text" class="form-control @error('titre_fr') is-invalid @enderror" 
-                                   id="titre_fr" name="titre_fr" 
-                                   value="{{ old('titre_fr', $article->title['fr'] ?? '') }}">
+                            <input type="text" class="form-control @error('titre_fr') is-invalid @enderror" id="titre_fr" name="titre_fr" value="{{ old('titre_fr', $article->title['fr'] ?? '') }}">
                                    
                             @error('titre_fr')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -37,8 +35,7 @@
 
                         <div class="mb-3">
                             <label for="contenu_fr" class="form-label">{{ __('lang.contenu_fr') }} *</label>
-                            <textarea class="form-control @error('contenu_fr') is-invalid @enderror" 
-                                      id="contenu_fr" name="contenu_fr" rows="6">{{ old('contenu_fr', $article->content['fr'] ?? '') }}</textarea>
+                            <textarea class="form-control @error('contenu_fr') is-invalid @enderror" id="contenu_fr" name="contenu_fr" rows="6">{{ old('contenu_fr', $article->content['fr'] ?? '') }}</textarea>
                             @error('contenu_fr')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -53,9 +50,7 @@
                         
                         <div class="mb-3">
                             <label for="titre_en" class="form-label">{{ __('lang.titre_en') }} *</label>
-                            <input type="text" class="form-control @error('titre_en') is-invalid @enderror" 
-                                   id="titre_en" name="titre_en" 
-                                   value="{{ old('titre_en', $article->title['en'] ?? '') }}">
+                            <input type="text" class="form-control @error('titre_en') is-invalid @enderror" id="titre_en" name="titre_en" value="{{ old('titre_en', $article->title['en'] ?? '') }}">
                             @error('titre_en')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -63,8 +58,7 @@
 
                         <div class="mb-3">
                             <label for="contenu_en" class="form-label">{{ __('lang.contenu_en') }} *</label>
-                            <textarea class="form-control @error('contenu_en') is-invalid @enderror" 
-                                      id="contenu_en" name="contenu_en" rows="6">{{ old('contenu_en', $article->content['en'] ?? '') }}</textarea>
+                            <textarea class="form-control @error('contenu_en') is-invalid @enderror" id="contenu_en" name="contenu_en" rows="6">{{ old('contenu_en', $article->content['en'] ?? '') }}</textarea>
                             @error('contenu_en')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

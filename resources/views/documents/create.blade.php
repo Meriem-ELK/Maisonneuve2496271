@@ -5,6 +5,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-10 col-xl-8">
         <div class="card shadow">
+
             <!-- Header -->
             <div class="card-header">
                 <h3 class="mb-0">
@@ -26,12 +27,7 @@
                             <label for="titre_fr" class="form-label">
                                 {{ __('lang.titre_fr') }} *
                             </label>
-                            <input type="text" 
-                                   class="form-control @error('titre_fr') is-invalid @enderror" 
-                                   id="titre_fr" 
-                                   name="titre_fr" 
-                                   value="{{ old('titre_fr') }}" 
-                                   placeholder="Entrez le titre du document en français">
+                            <input type="text" class="form-control @error('titre_fr') is-invalid @enderror" id="titre_fr"  name="titre_fr" value="{{ old('titre_fr') }}"  placeholder="Entrez le titre du document en français">
                             @error('titre_fr')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -45,15 +41,8 @@
                         </h5>
                         
                         <div class="mb-3">
-                            <label for="titre_en" class="form-label">
-                                {{ __('lang.titre_en') }} *
-                            </label>
-                            <input type="text" 
-                                   class="form-control @error('titre_en') is-invalid @enderror" 
-                                   id="titre_en" 
-                                   name="titre_en" 
-                                   value="{{ old('titre_en') }}" 
-                                   placeholder="Enter the document title in English">
+                            <label for="titre_en" class="form-label">{{ __('lang.titre_en') }} * </label>
+                            <input type="text" class="form-control @error('titre_en') is-invalid @enderror" id="titre_en" name="titre_en" value="{{ old('titre_en') }}" placeholder="Enter the document title in English">
                             @error('titre_en')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -67,14 +56,8 @@
                         </h5>
                         
                         <div class="mb-3">
-                            <label for="fichier" class="form-label">
-                                {{ __('lang.select_file') }} *
-                            </label>
-                            <input type="file" 
-                                   class="form-control @error('fichier') is-invalid @enderror" 
-                                   id="fichier" 
-                                   name="fichier" 
-                                   accept=".pdf,.zip,.doc,.docx">
+                            <label for="fichier" class="form-label">{{ __('lang.select_file') }} * </label>
+                            <input type="file" class="form-control @error('fichier') is-invalid @enderror" id="fichier" name="fichier" accept=".pdf,.zip,.doc,.docx">
                             @error('fichier')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -101,4 +84,4 @@
     </div>
 </div>
 
-@endsection
+@endsection('content')

@@ -5,11 +5,14 @@
 <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
         <div class="card shadow">
+
+            <!-- Header -->
             <div class="card-header">
                 <h3 class="card-title mb-0">
                     <i class="bi bi-lock me-2"></i>@lang('lang.login')
                 </h3>
             </div>
+
             <div class="card-body">
                 <form method="post">
                     @csrf
@@ -42,4 +45,4 @@
     </div>
 </div>
 
-@endsection
+@endsection('content')

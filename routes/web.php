@@ -47,24 +47,18 @@ Route::post('/registration', [UserController::class, 'store'])->name('user.store
         Route::put('/edit/etudiant/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
         Route::delete('/etudiant/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
 
-
         Route::get('/create/article', [ArticleController::class, 'create'])->name('article.create');
         Route::post('/create/article', [ArticleController::class, 'store'])->name('article.store');
         Route::get('/edit/article/{article}', [ArticleController::class, 'edit'])->name('article.edit');
         Route::put('/edit/article/{article}', [ArticleController::class, 'update'])->name('article.update');
         Route::delete('/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
-
-
-    Route::get('/documents', [DocumentController::class, 'index'])->name('document.index');
-    Route::get('/documents/create', [DocumentController::class, 'create'])->name('document.create');
-    Route::post('/documents', [DocumentController::class, 'store'])->name('document.store');
-    Route::get('/documents/{document}/edit', [DocumentController::class, 'edit'])->name('document.edit');
-    Route::put('/documents/{document}', [DocumentController::class, 'update'])->name('document.update');
-    Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->name('document.destroy');
-    Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('document.download');
-
-
-
+        Route::get('/documents', [DocumentController::class, 'index'])->name('document.index');
+        Route::get('/documents/create', [DocumentController::class, 'create'])->name('document.create');
+        Route::post('/documents', [DocumentController::class, 'store'])->name('document.store');
+        Route::get('/documents/{document}/edit', [DocumentController::class, 'edit'])->name('document.edit');
+        Route::put('/documents/{document}', [DocumentController::class, 'update'])->name('document.update');
+        Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->name('document.destroy');
+        Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('document.download');
 
  });

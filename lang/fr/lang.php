@@ -68,11 +68,11 @@ return [
     'title' => 'Titre',
     'type' => 'Type',
     'size' => 'Taille',
-    'download' => 'Télécharger',
     'current_file' => 'Fichier actuel',
     'leave_empty_keep_file' => 'Laisser vide pour conserver le fichier actuel',
     'no_documents' => 'Aucun document disponible',
     'list_documents' => 'Liste des documents',
+    'download' => 'Télécharger',
 
     
     // Boutons

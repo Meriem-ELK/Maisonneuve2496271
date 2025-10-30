@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->json('title'); // Titre en français et anglais
-            $table->string('fichier'); // Nom du fichier stocké
-            $table->string('fichier_original'); // Nom original du fichier
-            $table->string('type_fichier'); // Extension (pdf, zip, doc, docx)
+            $table->json('title');
+            $table->string('fichier'); 
+            $table->string('fichier_original'); 
+            $table->string('type_fichier');
             $table->integer('taille'); 
             $table->foreignId('etudiant_id')->constrained()->onDelete('cascade');
             $table->timestamps();

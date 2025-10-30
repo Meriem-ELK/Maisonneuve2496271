@@ -41,7 +41,7 @@
             </div>
 
             @guest
-                <!-- MENU POUR UTILISATEURS NON CONNECTÉS -->
+            <!-- Menu pour les utilisateurs non connectés -->
                 <div class="nav-section">
                     <div class="nav-section-title text-white-50 px-3">@lang('lang.menu_account')</div>
                     <a href="{{ route('login') }}" class="nav-link text-white {{ request()->routeIs('login') ? 'active' : '' }}">
@@ -55,7 +55,7 @@
                 </div>
             @else
 
-            <!-- MENU POUR UTILISATEURS CONNECTÉS -->
+            <!-- Menu pour les utilisateur connectés-->
                 
                 <!-- Section Étudiants -->
                 <div class="nav-section">
@@ -137,12 +137,14 @@
 
     <!-- Main Content -->
     <div class="main-content">
+
         <!-- Header -->
         <header class="main-header d-flex flex-row justify-content-between">
             <div class="d-flex align-items-center">
                 <button class="btn btn-link d-md-none me-1" type="button" onclick="toggleSidebar()">
                     <i class="bi bi-list fs-4"></i>
                 </button>
+
                 <h1 class="page-title">
                     <div class="school-icon">
                         <i class="bi bi-mortarboard-fill"></i>
@@ -152,9 +154,9 @@
             </div>
 
             <div class="header-subtitle ml-3">
-                    @auth
-                        @lang('lang.welcome') {{ Auth::user() ? Auth::user()->name : '' }}
-                    @endauth
+                @auth
+                    <i class="bi bi-house-door"></i> @lang('lang.welcome') {{ Auth::user() ? Auth::user()->name : '' }}
+                @endauth
             </div>
         </header>
 
@@ -180,8 +182,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-   <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
-    @stack('scripts')
 </body>
 </html>

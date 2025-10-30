@@ -69,6 +69,7 @@ return [
     'type' => 'Type',
     'size' => 'Size',
     'download' => 'Download',
+
     'current_file' => 'Current File',
     'leave_empty_keep_file' => 'Leave empty to keep current file',
     'no_documents' => 'No documents available',
@@ -103,6 +104,7 @@ return [
     'documents_directory' => 'Documents Directory',
     'share_document' => 'Share Document',
     'list_documents' => 'List of documents',
+    
 
     
     // Page name

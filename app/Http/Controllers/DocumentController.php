@@ -12,9 +12,7 @@ class DocumentController extends Controller
     // Afficher la liste des documents
     public function index()
     {
-        $documents = Document::with('etudiant')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
+        $documents = Document::with('etudiant')->orderBy('created_at', 'desc')->paginate(2);
         
         return view('documents.index', compact('documents'));
     }
@@ -50,8 +48,7 @@ class DocumentController extends Controller
             'etudiant_id' => Auth::user()->etudiant->id
         ]);
 
-        return redirect()->route('document.index')
-            ->with('success', trans('lang.message_success_create_file'));
+        return redirect()->route('document.index')->with('success', trans('lang.message_success_create_file'));
     }
 
     // Afficher le formulaire d'édition
@@ -79,6 +76,7 @@ class DocumentController extends Controller
 
         // Si un nouveau fichier est uploadé
         if ($request->hasFile('fichier')) {
+
             // Supprimer l'ancien fichier
             Storage::delete('public/documents/' . $document->fichier);
             
@@ -96,8 +94,7 @@ class DocumentController extends Controller
             ]);
         }
 
-        return redirect()->route('document.index')
-            ->with('success', trans('lang.message_success_edit_file'));
+        return redirect()->route('document.index')->with('success', trans('lang.message_success_edit_file'));
     }
 
     // Télécharger un document
@@ -106,20 +103,19 @@ class DocumentController extends Controller
         $cheminFichier = 'public/documents/' . $document->fichier;
         
         if (!Storage::exists($cheminFichier)) {
-            return redirect()->route('document.index')
-                ->with('error', 'Fichier introuvable!');
+            return redirect()->route('document.index') ->with('error', 'Fichier introuvable!');
         }
 
         return Storage::download($cheminFichier, $document->fichier_original);
     }
 
+  
     // Supprimer un document
     public function destroy(Document $document)
     {
         Storage::delete('public/documents/' . $document->fichier);
         $document->delete();
 
-        return redirect()->route('document.index')
-            ->with('success', trans('lang.message_success_delete_file'));
+        return redirect()->route('document.index')->with('success', trans('lang.message_success_delete_file'));
     }
 }

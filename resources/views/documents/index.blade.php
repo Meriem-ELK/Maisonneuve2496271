@@ -40,50 +40,36 @@
                                     </td>
                                     
                                     <!-- Auteur -->
-                                    <td>
-                                        <i class="bi bi-person-circle me-1"></i>
-                                        {{ $document->etudiant->nom }}
-                                    </td>
+                                    <td><i class="bi bi-person-circle me-1"></i> {{ $document->etudiant->nom }} </td>
                                     
                                     <!-- Type -->
                                     <td class="text-center">
-                                        <span class="badge bg-secondary text-uppercase">
-                                            {{ $document->type_fichier }}
-                                        </span>
+                                        <span class="badge bg-secondary text-uppercase">{{ $document->type_fichier }}</span>
                                     </td>
                                     
                                     <!-- Actions -->
                                     <td class="text-center">
                                         <div class="action-group justify-content-between px-4">
-                                            
                                             <!-- Télécharger -->
-                                            <a href="{{ route('document.download', $document) }}" 
-                                               class="btn btn-sm btn-outline-primary"
-                                               title="{{ __('lang.download') }}">
+                                            <a href="{{ route('document.download', $document) }}" class="btn btn-primary" title="{{ __('lang.downlaod') }}">
                                                 <i class="bi bi-download"></i>
-                                                <span>{{ __('lang.button_upload') }}</span>
+                                                <span>{{ __('lang.download') }}</span>
                                             </a>
-                                            
+
                                             @auth
                                                 @if (Auth::user()->etudiant->id === $document->etudiant_id)
+                                                
                                                     <!-- Modifier -->
-                                                    <a href="{{ route('document.edit', $document) }}" 
-                                                       class="btn btn-sm btn-outline-warning"
-                                                       title="{{ __('lang.button_edit') }}">
+                                                    <a href="{{ route('document.edit', $document) }}" class="btn btn-sm btn-outline-warning" title="{{ __('lang.button_edit') }}">
                                                         <i class="bi bi-pencil-square"></i>
                                                         <span>{{ __('lang.button_edit') }}</span>
                                                     </a>
                                                     
                                                     <!-- Supprimer -->
-                                                    <form action="{{ route('document.destroy', $document) }}" 
-                                                          method="post" 
-                                                          class="d-inline">
+                                                    <form action="{{ route('document.destroy', $document) }}" method="post" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" 
-                                                                class="btn btn-sm btn-outline-danger"
-                                                                title="{{ __('lang.button_delete') }}"
-                                                                onclick="return confirm({{ json_encode(__('lang.confirm_delete_article')) }})">
+                                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="{{ __('lang.button_delete') }}" onclick="return confirm({{ json_encode(__('lang.confirm_delete_article')) }})">
                                                             <i class="bi bi-trash3"></i>
                                                             <span>{{ __('lang.button_delete') }}</span>
                                                         </button>
@@ -115,4 +101,4 @@
 </div>
 
 
-@endsection
+@endsection('content')

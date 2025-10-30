@@ -75,7 +75,6 @@
                     <button type="submit" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash-fill me-1"></i>@lang('lang.button_delete')
                     </button>
-
                 </div>
             </div>
         </div>

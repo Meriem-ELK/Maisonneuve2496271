@@ -5,6 +5,7 @@
 <div class="row justify-content-center card-content">
     <div class="col-lg-8">
         <div class="card shadow">
+
             <!-- Header  -->
             <div class="card-header">
                 <h3 class="card-title mb-0">
@@ -51,8 +52,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="date_naissance" class="form-label">@lang('lang.birth_date') *</label>
-                            <input type="date" class="form-control" id="date_naissance" name="date_naissance" 
-                                   value="{{ old('date_naissance', $etudiant->date_naissance->format('Y-m-d')) }}">
+                            <input type="date" class="form-control" id="date_naissance" name="date_naissance" value="{{ old('date_naissance', $etudiant->date_naissance->format('Y-m-d')) }}">
                             @if($errors->has('date_naissance'))
                                 <div class="text-danger mt-2">
                                     {{$errors->first('date_naissance')}}
@@ -73,16 +73,14 @@
 
                     <div class="mb-3">
                         <label for="ville_id" class="form-label">@lang('lang.city') *</label>
-                        <select class="form-select @error('ville_id') is-invalid @enderror" 
-                                id="ville_id" name="ville_id" required>
+                        <select class="form-select @error('ville_id') is-invalid @enderror" id="ville_id" name="ville_id" required>
                             <option value="">@lang('lang.select_city') *</option>
+
                             @foreach($villes as $ville)
-                                <option value="{{ $ville->id }}" 
-                                        {{ old('ville_id', $etudiant->ville_id) == $ville->id ? 'selected' : '' }}>
-                                    {{ $ville->nom }}
-                                </option>
+                                <option value="{{ $ville->id }}" {{ old('ville_id', $etudiant->ville_id) == $ville->id ? 'selected' : '' }}> {{ $ville->nom }}</option>
                             @endforeach
                         </select>
+                        
                         @if($errors->has('ville_id'))
                                 <div class="text-danger mt-2">
                                     {{$errors->first('ville_id')}}
